@@ -160,6 +160,14 @@ require('lazy').setup({
     },
   },
   {
+    'iamcco/markdown-preview.nvim',
+    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
+    ft = { 'markdown' },
+    build = function()
+      vim.fn['mkdp#util#install']()
+    end,
+  },
+  {
     'pocco81/auto-save.nvim',
     keys = { vim.api.nvim_set_keymap('n', '<leader>n', ':ASToggle<CR>', {}) },
     event = 'VimEnter',
@@ -189,6 +197,16 @@ require('lazy').setup({
           },
         },
       }
+      -- LazyGit Terminal-Konfiguration
+      local Terminal = require('toggleterm.terminal').Terminal
+      local lazygit = Terminal:new { cmd = 'lazygit', hidden = true }
+
+      function _lazygit_toggle()
+        lazygit:toggle()
+      end
+
+      -- Keymap für LazyGit
+      vim.api.nvim_set_keymap('n', '<leader>g', '<cmd>lua _lazygit_toggle()<CR>', { noremap = true, silent = true })
     end,
   },
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
