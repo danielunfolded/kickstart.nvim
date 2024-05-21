@@ -92,6 +92,20 @@ vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' }
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
+-- map ctrl z to undo
+vim.keymap.set('n', '<C-z>', '<cmd>undo<CR>')
+vim.keymap.set('i', '<C-z>', '<cmd>undo<CR>')
+vim.keymap.set('v', '<C-z>', '<cmd>undo<CR>')
+vim.keymap.set('t', '<C-z>', '<cmd>undo<CR>')
+vim.keymap.set('c', '<C-z>', '<cmd>undo<CR>')
+
+-- map ctrl shift z to redo
+vim.keymap.set('n', '<C-S-z>', '<cmd>redo<CR>')
+vim.keymap.set('i', '<C-S-z>', '<cmd>redo<CR>')
+vim.keymap.set('v', '<C-S-z>', '<cmd>redo<CR>')
+vim.keymap.set('t', '<C-S-z>', '<cmd>redo<CR>')
+vim.keymap.set('c', '<C-S-z>', '<cmd>redo<CR>')
+
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
 --
@@ -727,7 +741,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'ruff', 'black' },
-        markdown = { 'mdformat' },
+        -- markdown = { 'mdformat' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
