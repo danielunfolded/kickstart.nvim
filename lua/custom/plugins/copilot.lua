@@ -16,5 +16,6 @@ return {
       help = true,
     },
   },
+
   event = 'VimEnter',
 }
