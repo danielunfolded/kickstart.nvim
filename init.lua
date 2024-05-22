@@ -251,14 +251,6 @@ require('lazy').setup({
     },
   },
   {
-    'iamcco/markdown-preview.nvim',
-    cmd = { 'MarkdownPreviewToggle', 'MarkdownPreview', 'MarkdownPreviewStop' },
-    ft = { 'markdown' },
-    build = function()
-      vim.fn['mkdp#util#install']()
-    end,
-  },
-  {
     'pocco81/auto-save.nvim',
     keys = { vim.api.nvim_set_keymap('n', '<leader>n', ':ASToggle<CR>', {}) },
     event = 'VimEnter',
@@ -369,11 +361,6 @@ require('lazy').setup({
   -- nvim-web-devicons Plugin
   {
     'kyazdani42/nvim-web-devicons',
-    config = function()
-      require('nvim-web-devicons').setup {
-        -- Deine Konfiguration hier
-      }
-    end,
   },
   -- NOTE: Plugins can specify dependencies.
   --
@@ -877,7 +864,7 @@ require('lazy').setup({
       -- Load the colorscheme here.
       -- Like many other themes, this one has different styles, and you could load
       -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      vim.cmd.colorscheme 'tokyonight-night'
+      vim.cmd.colorscheme 'wildcharm'
 
       -- You can configure highlights by doing something like:
       vim.cmd.hi 'Comment gui=none'
