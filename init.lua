@@ -174,11 +174,6 @@ require('lazy').setup({
     },
   },
   {
-    'mbbill/undotree',
-    cmd = 'UndotreeToggle',
-    keys = { { 'n', '<leader>u', '<cmd>UndotreeToggle<CR>', desc = 'Toggle [U]ndo Tree' } },
-  },
-  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = {
@@ -1006,3 +1001,4 @@ require('lazy').setup({
 vim.o.tabstop = 4 -- Set the width of a tab character
 vim.o.shiftwidth = 2 -- Set the number of spaces to use for each step of (auto)indent
 vim.o.softtabstop = 4 -- Set the number of spaces that a <Tab> counts for while performing editing operations
+vim.api.nvim_del_keymap('n', 'n')
