@@ -678,9 +678,10 @@ require('lazy').setup({
       vim.list_extend(ensure_installed, {
         'stylua', -- Used to format Lua code
         'ruff', -- Used to format Python code
-        'prettier',
+        'mdformat',
         'prettierd',
-        'eslint',
+        'pyright',
+        -- Add Docker, Compose, etc manually via Mason
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -728,8 +729,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'ruff' },
-        -- markdown = { 'mdformat' },
-        --
+        markdown = { 'mdformat' },
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
         -- javascript = { { "prettierd", "prettier" } },
