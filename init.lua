@@ -164,6 +164,16 @@ vim.opt.rtp:prepend(lazypath)
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   {
+    'christoomey/vim-tmux-navigator',
+    lazy = false,
+    keys = {
+      { 'n', '<C-h>', '<cmd>TmuxNavigateLeft<CR>', desc = 'Navigate [L]eft' },
+      { 'n', '<C-j>', '<cmd>TmuxNavigateDown<CR>', desc = 'Navigate [D]own' },
+      { 'n', '<C-k>', '<cmd>TmuxNavigateUp<CR>', desc = 'Navigate [U]p' },
+      { 'n', '<C-l>', '<cmd>TmuxNavigateRight<CR>', desc = 'Navigate [R]ight' },
+    },
+  },
+  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = {
@@ -215,7 +225,9 @@ require('lazy').setup({
     config = function()
       require('eyeliner').setup {
         highlight_on_key = true, -- enable highlight when pressing keys
-        dim = true, -- dim all other characters except the matching one
+        dim = true, -- dim all other characters except the matching ones
+        -- load the default keymaps
+        load_keymaps = true,
       }
     end,
   },
@@ -985,3 +997,4 @@ require('lazy').setup({
 vim.o.tabstop = 4 -- Set the width of a tab character
 vim.o.shiftwidth = 2 -- Set the number of spaces to use for each step of (auto)indent
 vim.o.softtabstop = 4 -- Set the number of spaces that a <Tab> counts for while performing editing operations
+vim.api.nvim_del_keymap('n', 'n')
