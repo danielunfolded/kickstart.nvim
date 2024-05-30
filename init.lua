@@ -180,6 +180,11 @@ require('lazy').setup({
     },
   },
   {
+    'mbbill/undotree',
+    cmd = 'UndotreeToggle',
+    keys = { { 'n', '<leader>u', '<cmd>UndotreeToggle<CR>', desc = 'Toggle [U]ndo Tree' } },
+  },
+  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = {
