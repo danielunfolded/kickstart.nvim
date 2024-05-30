@@ -96,18 +96,18 @@ vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
 -- map ctrl z to undo
-vim.keymap.set('n', '<C-z>', '<cmd>undo<CR>')
-vim.keymap.set('i', '<C-z>', '<cmd>undo<CR>')
-vim.keymap.set('v', '<C-z>', '<cmd>undo<CR>')
-vim.keymap.set('t', '<C-z>', '<cmd>undo<CR>')
-vim.keymap.set('c', '<C-z>', '<cmd>undo<CR>')
+vim.keymap.set('n', '<C-z>', 'u')
+vim.keymap.set('i', '<C-z>', '<C-o>u')
+vim.keymap.set('v', '<C-z>', '<C-o>u')
+vim.keymap.set('t', '<C-z>', '<C-\\><C-n>u')
+vim.keymap.set('c', '<C-z>', '<C-c>u')
 
--- map ctrl shift z to redo
-vim.keymap.set('n', '<C-S-z>', '<cmd>redo<CR>')
-vim.keymap.set('i', '<C-S-z>', '<cmd>redo<CR>')
-vim.keymap.set('v', '<C-S-z>', '<cmd>redo<CR>')
-vim.keymap.set('t', '<C-S-z>', '<cmd>redo<CR>')
-vim.keymap.set('c', '<C-S-z>', '<cmd>redo<CR>')
+-- map ctrl y to redo
+vim.keymap.set('n', '<C-y>', '<C-r>')
+vim.keymap.set('i', '<C-y>', '<C-o><C-r>')
+vim.keymap.set('v', '<C-y>', '<C-o><C-r>')
+vim.keymap.set('t', '<C-y>', '<C-\\><C-n><C-r>')
+vim.keymap.set('c', '<C-y>', '<C-c><C-r>')
 
 -- Keybinds to make split navigation easier.
 --  Use CTRL+<hjkl> to switch between windows
