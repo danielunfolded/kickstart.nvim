@@ -125,6 +125,12 @@ vim.api.nvim_set_keymap('n', '<leader>ti', ':ToggleTerm direction=float<CR>', op
 vim.api.nvim_set_keymap('n', '<leader>th', ':ToggleTerm direction=horizontal<CR>', opts)
 vim.api.nvim_set_keymap('n', '<leader>tv', ':ToggleTerm direction=vertical<CR>', opts)
 
+-- control w + h/j/k/l to move between windows to control + shift + h/j/k/l to move windows
+vim.api.nvim_set_keymap('n', '<C-h>', '<C-w>h', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-j>', '<C-w>j', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-k>', '<C-w>k', { noremap = true })
+vim.api.nvim_set_keymap('n', '<C-l>', '<C-w>l', { noremap = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
